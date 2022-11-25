@@ -1,5 +1,9 @@
 package Restaurant;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.Buffer;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -98,6 +102,34 @@ public class Admin extends AdminCustomers {
         System.out.println(Utilities.ANSI_RED + "\n\t\t\t\t => Total Sales: " + totalSales + Utilities.ANSI_RESET);
         return;
     }
+    
+    //method to write total sales in file
+    public void writeTotalSalesOnFile(String fileName)
+    {
+        try {
+            // Create a file writer
+            FileWriter fileWriter = new FileWriter(fileName + ".txt");
+
+            // Create a buffered writer
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            // Write the menu to the file
+            for (HashMap<String, Object> item : sales) {
+                bufferedWriter.write(item.get("itemNumber") + "," + item.get("itemName") + "," + item.get("itemPrice"));
+                bufferedWriter.newLine();
+            }
+
+            // Close the file
+            bufferedWriter.close();
+        } catch (IOException e) {
+            System.out.println("Error: " + "Sales does not exist.");
+        }
+
+    }
+    //method to write new sales information
+
+
+    
 
     public void addToMenu() {
 
