@@ -72,5 +72,13 @@ public class Utilities {
             return -1234;
         }
     }
+    //method to add time delay in Displaying the output
+    public static void delay(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
