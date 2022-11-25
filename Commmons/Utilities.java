@@ -23,6 +23,10 @@ public class Utilities {
     // Method to clear the console screen
     public static void clearScreen() {
         try {
+            delay(700);
+            //display delay message in blue Colors
+            System.out.println(ANSI_PURPLE + "\n\n\t\t\t => Please wait..." + ANSI_RESET);
+            delay(800);
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
