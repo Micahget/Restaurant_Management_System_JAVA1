@@ -42,12 +42,12 @@ public class Customers extends AdminCustomers {
                 case 1:
                     addToCart();
                     break;
-                case 2:
-                    viewCart();
-                    break;
-                case 3:
-                    removeFromCart();
-                    break;
+                // case 2:
+                //     viewCart();
+                //     break;
+                // case 3:
+                //     removeFromCart();
+                //     break;
                 case 4:
                     showSubtotal();
                     break;
@@ -125,98 +125,100 @@ public class Customers extends AdminCustomers {
         System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>You choosed an item not listed in the menu" + Utilities.ANSI_RESET);
         System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Please choose an item from the menu" + Utilities.ANSI_RESET);
     }
+ 
+    //remove view cart feature from program
+    // public void viewCart() {
 
-    public void viewCart() {
+    //     // If the cart is empty 
+    //     if (cart.isEmpty()) {
 
-        // If the cart is empty 
-        if (cart.isEmpty()) {
+    //         // Print the error message and return
+    //         System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Order Menu is empty" + Utilities.ANSI_RESET);
+    //         return;
+    //     }
 
-            // Print the error message and return
-            System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Order Menu is empty" + Utilities.ANSI_RESET);
-            return;
-        }
+    //     // Create a table to display the menu
+    //     Formatter f = new Formatter();
 
-        // Create a table to display the menu
-        Formatter f = new Formatter();
+    //     // Format the table title
+    //     f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
+    //     "", "\t CART", "", "");
 
-        // Format the table title
-        f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
-        "", "\t CART", "", "");
+    //     // Format the table title separator
+    //     f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
+    //     "---------", "-------------", "------------", "-------------");
 
-        // Format the table title separator
-        f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
-        "---------", "-------------", "------------", "-------------");
+    //     // Format the table header
+    //     f.format(Utilities.ANSI_PURPLE + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "", "Number",
+    //             "Item Name", "Item Price", "Item Quantity");
 
-        // Format the table header
-        f.format(Utilities.ANSI_PURPLE + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "", "Number",
-                "Item Name", "Item Price", "Item Quantity");
-
-        // Format the table header separator
-        f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
-                "---------", "-------------", "------------", "-------------");
+    //     // Format the table header separator
+    //     f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
+    //             "---------", "-------------", "------------", "-------------");
             
-        // Loop through the users cart
-        for (HashMap<String, Object> item1 : cart) {
+    //     // Loop through the users cart
+    //     for (HashMap<String, Object> item1 : cart) {
 
-            // Format the table body
-            f.format(Utilities.ANSI_CYAN +"%14s %14s %15s %10s %10s\n" + Utilities.ANSI_RESET, "", item1.get("itemNumber"),
-                    item1.get("itemName"), item1.get("itemPrice"), item1.get("itemQuantity"));
+    //         // Format the table body
+    //         f.format(Utilities.ANSI_CYAN +"%14s %14s %15s %10s %10s\n" + Utilities.ANSI_RESET, "", item1.get("itemNumber"),
+    //                 item1.get("itemName"), item1.get("itemPrice"), item1.get("itemQuantity"));
             
-            // Format the table body separator
-            f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
-                    "---------", "-------------", "------------", "-------------");
-        }
+    //         // Format the table body separator
+    //         f.format(Utilities.ANSI_GREEN + "%15s %15s %15s %15s %15s\n" + Utilities.ANSI_RESET, "",
+    //                 "---------", "-------------", "------------", "-------------");
+    //     }
 
-        // display the table menu
-        System.out.println("\n\n");
-        System.out.println(Utilities.ANSI_GREEN + f + Utilities.ANSI_RESET);
-        f.close();
-    }
+    //     // display the table menu
+    //     System.out.println("\n\n");
+    //     System.out.println(Utilities.ANSI_GREEN + f + Utilities.ANSI_RESET);
+    //     f.close();
+    // }
 
-    public void removeFromCart() {
+    //remove remove cart from the program
+    // public void removeFromCart() {
 
-        // If the cart is empty
-        if (cart.isEmpty()) {
+    //     // If the cart is empty
+    //     if (cart.isEmpty()) {
 
-            // Print the error message and return
-            System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Your Cart is empty\n\n" + Utilities.ANSI_RESET);
-            return;
-        }
+    //         // Print the error message and return
+    //         System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Your Cart is empty\n\n" + Utilities.ANSI_RESET);
+    //         return;
+    //     }
 
-        // Read the item number from the user
-        sc = new Scanner(System.in);
-        System.out.print(Utilities.ANSI_CYAN + "\t\t\t\t =>Enter the item Number" + Utilities.ANSI_RESET);
-        int itemNumber = sc.nextInt();
+    //     // Read the item number from the user
+    //     sc = new Scanner(System.in);
+    //     System.out.print(Utilities.ANSI_CYAN + "\t\t\t\t =>Enter the item Number" + Utilities.ANSI_RESET);
+    //     int itemNumber = sc.nextInt();
 
-        // Loop through the cart to find the itemNumber
-        for (HashMap<String, Object> menuItem : cart) {
+    //     // Loop through the cart to find the itemNumber
+    //     for (HashMap<String, Object> menuItem : cart) {
 
-            // if itemnumber is present in the orderMenu
-            if (menuItem.containsValue(itemNumber)) {
+    //         // if itemnumber is present in the orderMenu
+    //         if (menuItem.containsValue(itemNumber)) {
 
-                // if itemQuantity is more than 1, decrease the quantity by 1
-                if ((int) menuItem.get("itemQuantity") > 1) {
+    //             // if itemQuantity is more than 1, decrease the quantity by 1
+    //             if ((int) menuItem.get("itemQuantity") > 1) {
 
-                    // Decrease the item quantity by 1
-                    menuItem.put("itemQuantity", (int) menuItem.get("itemQuantity") - 1);
+    //                 // Decrease the item quantity by 1
+    //                 menuItem.put("itemQuantity", (int) menuItem.get("itemQuantity") - 1);
 
-                    // Print the item quantity decreased message
-                    System.out.println(Utilities.ANSI_RED + "\n\t \t \t \t =>Item quantity decreased" + Utilities.ANSI_RESET);
-                    return;
-                }
-                // if itemQuantity is 1, remove the item from the list
-                cart.remove(menuItem);
-                sales.remove(menuItem);
-                System.out.println(Utilities.ANSI_RED + "\n\t \t \t \t =>Item removed from your Cart" + Utilities.ANSI_RESET);
-                return;
-            }
-        }
+    //                 // Print the item quantity decreased message
+    //                 System.out.println(Utilities.ANSI_RED + "\n\t \t \t \t =>Item quantity decreased" + Utilities.ANSI_RESET);
+    //                 return;
+    //             }
+    //             // if itemQuantity is 1, remove the item from the list
+    //             cart.remove(menuItem);
+    //             sales.remove(menuItem);
+    //             System.out.println(Utilities.ANSI_RED + "\n\t \t \t \t =>Item removed from your Cart" + Utilities.ANSI_RESET);
+    //             return;
+    //         }
+    //     }
 
-        // If itemNumber is not found in the cart after looping through it
-        System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>You choosed an item not listed in Your Cart" + Utilities.ANSI_RESET);
-        System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Please choose an item listed in Your Cart\n\n" + Utilities.ANSI_RESET);
-        return;
-    }
+    //     // If itemNumber is not found in the cart after looping through it
+    //     System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>You choosed an item not listed in Your Cart" + Utilities.ANSI_RESET);
+    //     System.out.println(Utilities.ANSI_RED + "\t \t \t \t =>Please choose an item listed in Your Cart\n\n" + Utilities.ANSI_RESET);
+    //     return;
+    // }
 
     public void showSubtotal() {
 
@@ -253,9 +255,9 @@ public class Customers extends AdminCustomers {
     public void customerMainMenu() {
 
         // Display customers main menu in yellow color
-        System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 1. Add to Cart" + Utilities.ANSI_RESET);
-        System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 2. View Cart" + Utilities.ANSI_RESET);
-        System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 3. Delete From Cart" + Utilities.ANSI_RESET);
+        // System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 1. Order Food" + Utilities.ANSI_RESET);
+        // System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 2. View Cart" + Utilities.ANSI_RESET);
+        // System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 3. Delete From Cart" + Utilities.ANSI_RESET);
         System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 4. Display Sub total" + Utilities.ANSI_RESET);
         System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 5. Go back to main menu" + Utilities.ANSI_RESET);
         System.out.println(Utilities.ANSI_YELLOW + "\t \t \t \t 6. Exit" + Utilities.ANSI_RESET);
